@@ -1,0 +1,218 @@
+/* this page was made with mobile-first styling  */
+body {
+    margin: 0;
+    font-family: 'Kumbh Sans';
+    position: relative;
+}
+h1 {
+    font-weight: 700;
+    line-height: 28px;
+    font-size: 26px;
+    color: hsl(220, 13%, 13%);
+}
+h2 {
+    text-transform: uppercase;
+    color: hsl(26, 100%, 55%);
+    font-weight: 700;
+    font-size: 16px;
+}
+p {
+    font-size: 16px;
+    color: hsl(219, 9%, 45%);
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    padding: 10px 0;
+    font-weight: 700;
+}
+
+/* overlay menu styling */
+.overlay-menu {
+    display: none;
+    width: 65%;
+    height: 100vh;
+    background-color: white;
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 20px;
+}
+/* cart overlay summary styling */
+.cart-summary {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 98%;
+    height: 85%;
+    background-color: white;
+    border-radius: 15px;
+    z-index: 3;
+}
+#cart-summary-heading {
+    margin: 0;
+    padding: 25px;
+    color: black;
+    border-bottom: 1px solid hsl(223, 64%, 98%);
+}
+#cart-empty-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* filter for background when the overlay menu or lightbox are active */
+.darken:before {
+    background: black;
+    content: "";
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    }
+
+/* nav bar styling */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+.nav-bar div * {
+    margin: 0 10px;
+}
+#menu-icon {
+    width: 16px;
+    height: 15px;
+}
+#logo {
+    width: 138px;
+    height: 20px;
+}
+#cart-icon {
+    width: 22px;
+    height: 20px;
+}
+#avatar-image {
+    width: 22px;
+    height: 22px;
+}
+
+/* photo slider styling */
+.photo-slider {
+    width: 100%;
+    position: relative;
+}
+.photo-slider button {
+    background-color: white;
+    border: none;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    z-index: 1;
+    margin: 0 8px;
+    padding: 0;
+}
+.photo-slider button img {
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.slide {
+    width: 100%;
+}
+
+/* styling for product description and price */
+.product-details {
+    padding: 0 15px;
+}
+.product-price-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.product-price-details div:first-child{
+    display: flex;
+    align-items: center;
+}
+.sale-percantage {
+    background-color: hsl(25, 100%, 94%);
+    color: hsl(26, 100%, 55%);
+    width: 40px;
+    height: 24px;
+    border-radius: 15%;
+    text-align: center;
+    margin-left: 15px;
+    font-weight: 700;
+}
+.old-price {
+    text-decoration: line-through;
+    color: hsl(220, 14%, 75%);
+    font-weight: 700;
+}
+ 
+/* styling for add to cart counter */
+.counter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(223, 64%, 98%);
+    border-radius: 10px;
+    padding: 0 5px;
+    margin-top: 20px;
+}
+.counter button {
+    background: none;
+    border: none;
+}
+#add-to-cart-count {
+    font-weight: 700;
+    color: black;
+}
+
+/* add to cart button styling */
+.add-to-cart {
+    background-color: hsl(26, 100%, 55%);
+    border: none;
+    color: white;
+    width: 100%;
+    height: 56px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 75px;
+    box-shadow: 0px 14px 24px 0px rgba(255,125,26,0.48);
+    -webkit-box-shadow: 0px 14px 24px 0px rgba(255,125,26,0.48);
+    -moz-box-shadow: 0px 14px 24px 0px rgba(255,125,26,0.48);
+}
+.add-to-cart img {
+    /* this filter turns svg icon to white */
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2379%) hue-rotate(306deg) brightness(111%) contrast(101%);
+    width: 16px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+/* front end mentor attribution  */
+.attribution {
+    font-size: 11px; 
+    text-align: center;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* hide desktop elements in mobile design */
+.menu {
+    display: none;
+}
