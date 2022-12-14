@@ -33,16 +33,19 @@
       <img src="images/icon-menu.svg" alt="" id="menu-icon" onClick="openMenu()">
       <img src="images/logo.svg" alt="" id="logo">
     </div>
-    <div>
-      <img src="images/icon-cart.svg" alt="" id="cart-icon">
+    <ul class="menu">
+      <li>Collections</li>
+      <li>Men</li>
+      <li>Women</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+    <div class="right-nav-bar">
+      <div class="shopping-cart">
+        <img src="images/icon-cart.svg" alt="" id="cart-icon" onClick="toggleCartSummary()">
+        <div class="cart-count" id="cart-filled-notification"></div>
+      </div>
       <img src="images/image-avatar.png" alt="" id="avatar-image">
-      <ul class="menu">
-        <li>Collections</li>
-        <li>Men</li>
-        <li>Women</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
     </div>
   </div>
 
@@ -52,10 +55,25 @@
     <div class="cart-summary">
       <p id="cart-summary-heading">Cart</p>
       <p id="cart-empty-message">Your cart is empty.</p>
+      <div id="cart-filled">
+        <div class="cart-summary-product">
+          <img src="images/image-product-1-thumbnail.jpg" alt="" class="cart-product-thumbnail">
+          <div class="cart-product-details">
+            <p>
+              Fall Limited Edition Sneakers
+              <br>
+              $125.00 x <span class="cart-count"></span> <span id="cart-total"></span>
+            </p>
+          </div>
+          <img src="images/icon-delete.svg" alt="" class="delete-icon" onClick="updateCartCounter(-1)">
+        </div>
+        <button class="primary-button checkout-button">Checkout</button>
+      </div>
     </div>
+    <!-- end of mobile cart summary overlay -->
 
-    <button class="w3-display-left" onclick="changeSlide(-1)"><img src="images/icon-previous.svg" alt=""></button>
-    <button class="w3-display-right" onclick="changeSlide(+1)"><img src="images/icon-next.svg" alt=""></button>
+    <button class="w3-display-left slider-arrow" onclick="changeSlide(-1)"><img src="images/icon-previous.svg" alt=""></button>
+    <button class="w3-display-right slider-arrow" onclick="changeSlide(+1)"><img src="images/icon-next.svg" alt=""></button>
     <img class="slide w3-animate-opacity" src="images/image-product-1.jpg">
     <img class="slide w3-animate-opacity" src="images/image-product-2.jpg">
     <img class="slide w3-animate-opacity" src="images/image-product-3.jpg">
@@ -89,7 +107,7 @@
       </button>
     </div>
     
-    <button class="add-to-cart"><img src="images/icon-cart.svg" alt="">Add to Cart</button>
+    <button class="add-to-cart primary-button" onClick="addToCartHandler()"><img src="images/icon-cart.svg" alt="">Add to Cart</button>
     
   </div>
   
