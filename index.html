@@ -16,7 +16,7 @@
 </head>
 <body>
   
-  <!-- mobile navigation menu -->
+  <!-- mobile navigation menu overlay -->
   <div class="overlay-menu">
     <img src="images/icon-close.svg" alt="" onClick="closeMenu()">
     <ul>
@@ -27,19 +27,40 @@
       <li>Contact</li>
     </ul>
   </div>
-  
+
+  <!-- mobile cart summary overlay -->
+  <div class="cart-summary">
+    <p id="cart-summary-heading">Cart</p>
+    <p id="cart-empty-message">Your cart is empty.</p>
+    <div id="cart-filled">
+      <div class="cart-summary-product">
+        <img src="images/image-product-1-thumbnail.jpg" alt="" class="cart-product-thumbnail">
+        <div class="cart-product-details">
+          <p>
+            Fall Limited Edition Sneakers
+            <br>
+            $125.00 x <span class="cart-count"></span> <span id="cart-total"></span>
+          </p>
+        </div>
+        <img src="images/icon-delete.svg" alt="" class="delete-icon" onClick="updateCartCounter(-1)">
+      </div>
+      <button class="primary-button checkout-button">Checkout</button>
+    </div>
+  </div>
+
+  <!-- top navigation bar -->
   <div class="nav-bar">
-    <div>  
+    <div class="left-nav-bar">
       <img src="images/icon-menu.svg" alt="" id="menu-icon" onClick="openMenu()">
       <img src="images/logo.svg" alt="" id="logo">
+      <ul class="menu">
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
     </div>
-    <ul class="menu">
-      <li>Collections</li>
-      <li>Men</li>
-      <li>Women</li>
-      <li>About</li>
-      <li>Contact</li>
-    </ul>
     <div class="right-nav-bar">
       <div class="shopping-cart">
         <img src="images/icon-cart.svg" alt="" id="cart-icon" onClick="toggleCartSummary()">
@@ -48,70 +69,57 @@
       <img src="images/image-avatar.png" alt="" id="avatar-image">
     </div>
   </div>
+  <div class="desktop-flex">
+    <div class="photo-slider">
+      <button class="w3-display-left slider-arrow" onclick="changeSlide(-1)"><img src="images/icon-previous.svg" alt=""></button>
+      <button class="w3-display-right slider-arrow" onclick="changeSlide(+1)"><img src="images/icon-next.svg" alt=""></button>
+      <img class="slide w3-animate-opacity" src="images/image-product-1.jpg">
+      <img class="slide w3-animate-opacity" src="images/image-product-2.jpg">
+      <img class="slide w3-animate-opacity" src="images/image-product-3.jpg">
+      <img class="slide w3-animate-opacity" src="images/image-product-4.jpg">
 
-  <div class="photo-slider">
+      <div class="product-thumbnails">
+        <img class ="thumbnail" src="images/image-product-1-thumbnail.jpg" alt="">
+        <img class ="thumbnail" src="images/image-product-2-thumbnail.jpg" alt="">
+        <img class ="thumbnail" src="images/image-product-3-thumbnail.jpg" alt="">
+        <img class ="thumbnail" src="images/image-product-4-thumbnail.jpg" alt="">
+
+      </div>
+    </div>
     
-    <!-- mobile cart summary overlay -->
-    <div class="cart-summary">
-      <p id="cart-summary-heading">Cart</p>
-      <p id="cart-empty-message">Your cart is empty.</p>
-      <div id="cart-filled">
-        <div class="cart-summary-product">
-          <img src="images/image-product-1-thumbnail.jpg" alt="" class="cart-product-thumbnail">
-          <div class="cart-product-details">
-            <p>
-              Fall Limited Edition Sneakers
-              <br>
-              $125.00 x <span class="cart-count"></span> <span id="cart-total"></span>
-            </p>
-          </div>
-          <img src="images/icon-delete.svg" alt="" class="delete-icon" onClick="updateCartCounter(-1)">
+    <div class="product-details">
+      
+      <h2>Sneaker Company</h2>
+      
+      <h1>Fall Limited Edition Sneakers</h1>
+      
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+  
+      <div class="product-price-details">
+        <div>
+          <h1>$125.00</h1>
+          <div class="sale-percantage">50%</div>
         </div>
-        <button class="primary-button checkout-button">Checkout</button>
+        <div class="old-price">$250.00</div>
       </div>
-    </div>
-    <!-- end of mobile cart summary overlay -->
 
-    <button class="w3-display-left slider-arrow" onclick="changeSlide(-1)"><img src="images/icon-previous.svg" alt=""></button>
-    <button class="w3-display-right slider-arrow" onclick="changeSlide(+1)"><img src="images/icon-next.svg" alt=""></button>
-    <img class="slide w3-animate-opacity" src="images/image-product-1.jpg">
-    <img class="slide w3-animate-opacity" src="images/image-product-2.jpg">
-    <img class="slide w3-animate-opacity" src="images/image-product-3.jpg">
-    <img class="slide w3-animate-opacity" src="images/image-product-4.jpg">
+      <!-- this div allows desktop design to flex -->
+      <div class="product-detail-buttons">
+        <div class="counter">
+          <button onClick="changeAddToCartCounter(-1)">
+            <img src="images/icon-minus.svg" alt="">
+          </button>
+          <p id="add-to-cart-count"></p>
+          <button onClick="changeAddToCartCounter(1)">
+            <img src="images/icon-plus.svg" alt="">  
+          </button>
+        </div>        
+        <button class="add-to-cart primary-button" onClick="addToCartHandler()"><img src="images/icon-cart.svg" alt="">Add to Cart</button>
+      </div>      
+    </div>
   </div>
-  
-  <div class="product-details">
-    
-    <h2>Sneaker Company</h2>
-    
-    <h1>Fall Limited Edition Sneakers</h1>
-    
-    <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
-      durable rubber outer sole, they'll withstand everything the weather can offer.</p>
 
-    <div class="product-price-details">
-      <div>
-        <h1>$125.00</h1>
-        <div class="sale-percantage">50%</div>
-      </div>
-      <div class="old-price">$250.00</div>
-    </div>
-
-    <div class="counter">
-      <button onClick="changeAddToCartCounter(-1)">
-        <img src="images/icon-minus.svg" alt="">
-      </button>
-      <p id="add-to-cart-count"></p>
-      <button onClick="changeAddToCartCounter(1)">
-        <img src="images/icon-plus.svg" alt="">  
-      </button>
-    </div>
-    
-    <button class="add-to-cart primary-button" onClick="addToCartHandler()"><img src="images/icon-cart.svg" alt="">Add to Cart</button>
-    
-  </div>
-  
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
