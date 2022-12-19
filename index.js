@@ -28,9 +28,24 @@ function showSlide(n) {
         x[i].style.display = "none";
     }
     x[slideIndex-1].style.display = "block";
+    console.log("ran");
 }
 function changeSlide(n) {
     showSlide(slideIndex += n);
+}
+
+/* handler function for the desktop thumbnail images */
+function thumbnailHandler(n) {
+    showSlide(slideIndex = n);
+    let thumbnails = document.getElementsByClassName("thumbnail");
+    console.log(thumbnails.length);
+    for (let i=0; i < thumbnails.length; i++) {
+        if (i == slideIndex - 1) {
+            thumbnails[i].classList.add("active-thumbnail");
+        }else{
+            thumbnails[i].classList.remove("active-thumbnail");
+        }
+    }
 }
 
 /* function to change the add to cart counter */

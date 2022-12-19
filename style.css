@@ -155,7 +155,7 @@ li {
     top: 0;
     right: 0;
     width: 20px;
-    height: 12px;
+    height: 14px;
     font-size: 10px;
     text-align: center;
     margin: 0;
@@ -269,6 +269,7 @@ li {
 .attribution {
     font-size: 11px; 
     text-align: center;
+    margin-top: 20px;
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
@@ -338,6 +339,7 @@ li {
         right: 3%;
         top: 100px;
         transform: none;
+        box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
     }
 
     /* main content flex in desktop design */
@@ -379,6 +381,9 @@ li {
     .product-price-details {
         display: block;
     }
+    .product-price {
+        font-size: 28px;
+    }
     .product-detail-buttons {
         display: flex;
         justify-content: space-between;
@@ -391,4 +396,30 @@ li {
         width: 65%;
     }
 
+    /* active states styling for desktop */
+    #avatar-image:hover {
+        border: 2px solid hsl(26, 100%, 55%);
+        border-radius: 100%;
+        cursor: pointer;
+    }
+    #cart-icon:hover {
+        /* turns icon black */
+        filter: brightness(0) saturate(100%);
+        cursor: pointer;
+    }
+    button:hover {
+        cursor: pointer;
+        opacity: 70%;
+    }
+    .delete-icon:hover {
+        cursor: pointer;
+    }
+    .thumbnail:hover {
+        opacity: 70%;
+        cursor: pointer;
+    }
+    .active-thumbnail {
+        opacity: 70%;
+        border: 3px solid hsl(26, 100%, 55%);
+    }
 }

@@ -28,7 +28,7 @@
     </ul>
   </div>
 
-  <!-- mobile cart summary overlay -->
+  <!-- cart summary overlay -->
   <div class="cart-summary">
     <p id="cart-summary-heading">Cart</p>
     <p id="cart-empty-message">Your cart is empty.</p>
@@ -79,10 +79,10 @@
       <img class="slide w3-animate-opacity" src="images/image-product-4.jpg">
 
       <div class="product-thumbnails">
-        <img class ="thumbnail" src="images/image-product-1-thumbnail.jpg" alt="">
-        <img class ="thumbnail" src="images/image-product-2-thumbnail.jpg" alt="">
-        <img class ="thumbnail" src="images/image-product-3-thumbnail.jpg" alt="">
-        <img class ="thumbnail" src="images/image-product-4-thumbnail.jpg" alt="">
+        <img class ="thumbnail active-thumbnail" onclick="thumbnailHandler(1)" src="images/image-product-1-thumbnail.jpg" alt="">
+        <img class ="thumbnail" onclick="thumbnailHandler(2)" src="images/image-product-2-thumbnail.jpg" alt="">
+        <img class ="thumbnail" onclick="thumbnailHandler(3)" src="images/image-product-3-thumbnail.jpg" alt="">
+        <img class ="thumbnail" onclick="thumbnailHandler(4)" src="images/image-product-4-thumbnail.jpg" alt="">
 
       </div>
     </div>
@@ -98,7 +98,7 @@
   
       <div class="product-price-details">
         <div>
-          <h1>$125.00</h1>
+          <h1 class="product-price">$125.00</h1>
           <div class="sale-percantage">50%</div>
         </div>
         <div class="old-price">$250.00</div>
