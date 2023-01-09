@@ -17,36 +17,52 @@ function toggleCartSummary() {
     }
 }
 
-/* photo slider functions and variables*/
+/* photo slider functions and variables updates both the main page and lightbox overlay*/
 let slideIndex = 1;
 function showSlide(n) {
-    var i;
-    var x = document.getElementsByClassName("slide");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
+    const slides = document.getElementsByClassName("slide");
+    const lightboxSlides = document.getElementsByClassName("lightbox-slide")
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length} ;
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        lightboxSlides[i].style.display = "none";
     }
-    x[slideIndex-1].style.display = "block";
-    console.log("ran");
-}
-function changeSlide(n) {
-    showSlide(slideIndex += n);
+    slides[slideIndex-1].style.display = "block";
+    lightboxSlides[slideIndex-1].style.display = "block";
 }
 
-/* handler function for the desktop thumbnail images */
+/* handler function for the desktop and lightbox thumbnail images */
 function thumbnailHandler(n) {
     showSlide(slideIndex = n);
-    let thumbnails = document.getElementsByClassName("thumbnail");
-    console.log(thumbnails.length);
+    const thumbnails = document.getElementsByClassName("thumbnail");
+    const lightboxThumbnails = document.getElementsByClassName("lightbox-thumbnail");
     for (let i=0; i < thumbnails.length; i++) {
         if (i == slideIndex - 1) {
             thumbnails[i].classList.add("active-thumbnail");
+            lightboxThumbnails[i].classList.add("active-thumbnail", "lighten");
         }else{
             thumbnails[i].classList.remove("active-thumbnail");
+            lightboxThumbnails[i].classList.remove("active-thumbnail", "lighten");
         }
     }
 }
+function changeSlide(n) {
+    slideIndex += n;
+    showSlide(slideIndex);
+    thumbnailHandler(slideIndex);
+}
+
+/* function to open lightbox overlay */
+function openLightbox() {
+    var x = window.matchMedia("(min-width: 768px)");
+    if (x.matches){
+        document.getElementsByClassName('lightbox')[0].style.display = "block";
+        document.body.classList.add("darken");
+    }
+    
+}
+
 
 /* function to change the add to cart counter */
 let addToCartCounter = 0;

@@ -15,7 +15,6 @@
 
 </head>
 <body>
-  
   <!-- mobile navigation menu overlay -->
   <div class="overlay-menu">
     <img src="images/icon-close.svg" alt="" onClick="closeMenu()">
@@ -48,6 +47,28 @@
     </div>
   </div>
 
+  <!-- desktop image lightbox overlay -->
+  <div class="lightbox">
+    <div class="photo-slider">
+      <img class="lightbox-close-icon"src="images/icon-close.svg" alt="">
+      <div class="lightbox-arrows-container">
+        <button class="lightbox-arrow slider-arrow" onclick="changeSlide(-1)"><img class="lightbox-arrow-icon arrow-icon" src="images/icon-previous.svg" alt=""></button>
+        <button class="lightbox-arrow slider-arrow" onclick="changeSlide(+1)"><img class="lightbox-arrow-icon arrow-icon" src="images/icon-next.svg" alt=""></button>
+      </div>
+      <img class="lightbox-slide w3-animate-opacity" src="images/image-product-1.jpg">
+      <img class="lightbox-slide w3-animate-opacity" src="images/image-product-2.jpg">
+      <img class="lightbox-slide w3-animate-opacity" src="images/image-product-3.jpg">
+      <img class="lightbox-slide w3-animate-opacity" src="images/image-product-4.jpg">
+
+      <div class="product-thumbnails">
+        <img class ="lightbox-thumbnail active-thumbnail" onclick="thumbnailHandler(1)" src="images/image-product-1-thumbnail.jpg" alt="">
+        <img class ="lightbox-thumbnail" onclick="thumbnailHandler(2)" src="images/image-product-2-thumbnail.jpg" alt="">
+        <img class ="lightbox-thumbnail" onclick="thumbnailHandler(3)" src="images/image-product-3-thumbnail.jpg" alt="">
+        <img class ="lightbox-thumbnail" onclick="thumbnailHandler(4)" src="images/image-product-4-thumbnail.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
   <!-- top navigation bar -->
   <div class="nav-bar">
     <div class="left-nav-bar">
@@ -69,14 +90,16 @@
       <img src="images/image-avatar.png" alt="" id="avatar-image">
     </div>
   </div>
-  <div class="desktop-flex">
+
+  <div class="main-content">
+    <!--   photo slider on the page -->
     <div class="photo-slider">
-      <button class="w3-display-left slider-arrow" onclick="changeSlide(-1)"><img src="images/icon-previous.svg" alt=""></button>
-      <button class="w3-display-right slider-arrow" onclick="changeSlide(+1)"><img src="images/icon-next.svg" alt=""></button>
-      <img class="slide w3-animate-opacity" src="images/image-product-1.jpg">
-      <img class="slide w3-animate-opacity" src="images/image-product-2.jpg">
-      <img class="slide w3-animate-opacity" src="images/image-product-3.jpg">
-      <img class="slide w3-animate-opacity" src="images/image-product-4.jpg">
+      <button class="w3-display-left slider-arrow" onclick="changeSlide(-1)"><img class="arrow-icon" src="images/icon-previous.svg" alt=""></button>
+      <button class="w3-display-right slider-arrow" onclick="changeSlide(+1)"><img class="arrow-icon" src="images/icon-next.svg" alt=""></button>
+      <img class="slide w3-animate-opacity" src="images/image-product-1.jpg" onclick="openLightbox()">
+      <img class="slide w3-animate-opacity" src="images/image-product-2.jpg" onclick="openLightbox()">
+      <img class="slide w3-animate-opacity" src="images/image-product-3.jpg" onclick="openLightbox()">
+      <img class="slide w3-animate-opacity" src="images/image-product-4.jpg" onclick="openLightbox()">
 
       <div class="product-thumbnails">
         <img class ="thumbnail active-thumbnail" onclick="thumbnailHandler(1)" src="images/image-product-1-thumbnail.jpg" alt="">
