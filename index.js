@@ -53,7 +53,7 @@ function changeSlide(n) {
     thumbnailHandler(slideIndex);
 }
 
-/* function to open lightbox overlay */
+/* functions to open and close lightbox overlay */
 function openLightbox() {
     var x = window.matchMedia("(min-width: 768px)");
     if (x.matches){
@@ -61,6 +61,10 @@ function openLightbox() {
         document.body.classList.add("darken");
     }
     
+}
+function closeLightbox() {
+    document.getElementsByClassName('lightbox')[0].style.display = "none";
+    document.body.classList.remove("darken");
 }
 
 
@@ -74,6 +78,7 @@ function changeAddToCartCounter(n) {
 }
 
 /* function and variable to update the number of items in the cart*/
+/*TO update the cart counter we update empty cart message, we update */ 
 let cartCounter = 0;
 function updateCartCounter(n){
     cartCounter += n;

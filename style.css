@@ -111,18 +111,16 @@ li {
     width: 100%;
     height: 100%;
     z-index: 4;
-    }
-
+}
 .lighten:before {
     background: white;
     content: "";
-    opacity: 0.75;
+    opacity: 1;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 999;
 }
 
 /* nav bar styling */
@@ -397,9 +395,14 @@ li {
         left: 50%;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
+        text-align: right;
     }
     .lightbox-close-icon {
-        color: white;
+        /* changes icon to white */
+        filter:brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(7%) hue-rotate(344deg) brightness(101%) contrast(101%);
+        width: 20px;
+        margin-bottom: 10px;
+
     }
     .lightbox-arrows-container {
         position: absolute;
@@ -430,6 +433,7 @@ li {
     .lightbox-thumbnail {
         width: 20%;
         position: relative;
+        opacity: 1;
     }
 
     /* styling for product description and add to cart buttons */
@@ -469,7 +473,7 @@ li {
     .lightbox-arrow:hover {
         opacity: 1;
     }
-    .lightbox-arrow-icon:hover {
+    .lightbox-arrow:hover .lightbox-arrow-icon {
         /* turns icon orange */
         filter: brightness(0) saturate(100%) invert(62%) sepia(87%) saturate(3057%) hue-rotate(347deg) brightness(101%) contrast(101%);
     }
